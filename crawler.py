@@ -47,7 +47,9 @@ with open("sample.csv", "r") as thefile:
 
     thefile.close()
 
-if(read_file[-1].split(",")[0] != array[0]):
+
+#print(read_file[-1].split(",")[1], array[1])
+if(read_file[-1].split(",")[0] != array[0] or read_file[-1].split(",")[1] != array[1]):
     with open("sample.csv", "w") as thefile:
         for line in read_file:
             thefile.write(line)
