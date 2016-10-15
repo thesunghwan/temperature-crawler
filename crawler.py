@@ -3,7 +3,6 @@ import urllib.request
 
 response = urllib.request.urlopen("http://api.wunderground.com/api/65f29d617d92d50b/hourly/q/KR/Pohang.json")
 
-
 data = json.loads(response.read().decode('utf-8'))
 twelve_hours_later = data["hourly_forecast"][12]
 
@@ -14,7 +13,6 @@ day = twelve_hours_later["FCTTIME"]["mday"]
 date = year + "/" + month + "/" + day
 
 hour = twelve_hours_later["FCTTIME"]["hour"]
-
 
 temp = twelve_hours_later["temp"]
 
@@ -47,8 +45,6 @@ with open("sample.csv", "r") as thefile:
 
     thefile.close()
 
-
-#print(read_file[-1].split(",")[1], array[1])
 if(read_file[-1].split(",")[0] != array[0] or read_file[-1].split(",")[1] != array[1]):
     with open("sample.csv", "w") as thefile:
         for line in read_file:
