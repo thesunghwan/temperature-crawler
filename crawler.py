@@ -4,7 +4,7 @@ import urllib.request
 response = urllib.request.urlopen("http://api.wunderground.com/api/65f29d617d92d50b/hourly/q/KR/Pohang.json")
 
 data = json.loads(response.read().decode('utf-8'))
-twelve_hours_later = data["hourly_forecast"][12]
+twelve_hours_later = data["hourly_forecast"][3]
 
 pretty = twelve_hours_later["FCTTIME"]["pretty"]
 year = twelve_hours_later["FCTTIME"]["year"]
